@@ -90,7 +90,15 @@
       "type": "build"
     },
     {
+      "name": "case",
+      "type": "runtime"
+    },
+    {
       "name": "projen",
+      "type": "runtime"
+    },
+    {
+      "name": "yaml",
       "type": "runtime"
     }
   ],

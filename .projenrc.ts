@@ -8,7 +8,7 @@ const project = new cdk.JsiiProject({
   name: '@matthewbonig/cdk-construct-library',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/mbonig/cdk-construct-library.git',
-  deps: ['projen'],
+  deps: ['projen', 'yaml', 'case'],
 });
 
 project.synth();

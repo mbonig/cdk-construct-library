@@ -56,7 +56,9 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "projen": "^0.77.6"
+    "case": "^1.6.3",
+    "projen": "^0.77.6",
+    "yaml": "^2.3.4"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
