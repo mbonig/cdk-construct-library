@@ -1,8 +1,8 @@
 {
-  "name": "cdk-construct-library",
+  "name": "@matthewbonig/cdk-construct-library",
   "repository": {
     "type": "git",
-    "url": "https://github.com/matthew.bonig/cdk-construct-library.git"
+    "url": "https://github.com/mbonig/cdk-construct-library.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -54,6 +54,9 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "projen": "^0.77.6"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
