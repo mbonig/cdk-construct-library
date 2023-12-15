@@ -95,13 +95,6 @@ export interface CdkConstructOptions {
    * Additional bundled dependencies to add to the project.
    */
   readonly bundledDeps?: string[];
-
-  /**
-   * Magic to make projen work.
-   * @internal
-   */
-  readonly __new__?: any;
-
 }
 
 class SampleConstructFile extends SampleFile {
@@ -200,7 +193,7 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       },
       sampleCode: false,
       // @ts-ignore
-      __new__: options.__new__,
+      __new__: options.__new__, // MAGIC
     });
 
     new SampleConstructFile(this, options.name);
