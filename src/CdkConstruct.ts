@@ -75,6 +75,13 @@ export interface CdkConstructOptions {
    * @default false
    */
   readonly disablePublishToGo?: boolean;
+
+  /**
+   * Magic to make projen work.
+   * @internal
+   */
+  readonly __new__?: any;
+
 }
 
 class SampleConstructFile extends SampleFile {
@@ -89,6 +96,7 @@ class SampleConstructFile extends SampleFile {
         `export class ${pascal(constructName)} extends Construct {`,
         `  constructor(scope: Construct, id: string, props: ${propsInterfaceName}) {`,
         '    super(scope, id);',
+        '    const {} = props;',
         '  }',
         '}',
       ].join('\n'),
@@ -109,7 +117,7 @@ class TestFile extends SampleFile {
   constructor(scope: Project, constructName: string) {
     super(scope, `test/${pascal(constructName)}.test.ts`, {
       contents: [
-        "import { App, Stack } from 'aws-cdk-lib';",
+        "import { Stack } from 'aws-cdk-lib';",
         "import { Template } from 'aws-cdk-lib/assertions';",
         `import { ${pascal(constructName)} } from '../src';`,
 
@@ -166,6 +174,8 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
         gitUserEmail: 'matthew.bonig@gmail.com',
       },
       sampleCode: false,
+      // @ts-ignore
+      __new__: options.__new__,
     });
 
     new SampleConstructFile(this, options.name);

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CdkConstruct Creates test file 1`] = `
-"import { App, Stack } from 'aws-cdk-lib';
+"import { Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import { TestConstruct } from '../src';
 test('Snapshot', () => {
@@ -27,6 +27,7 @@ export interface TestConstructProps {}
 export class TestConstruct extends Construct {
   constructor(scope: Construct, id: string, props: TestConstructProps) {
     super(scope, id);
+    const {} = props;
   }
 }"
 `;
