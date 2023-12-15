@@ -152,6 +152,7 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       repositoryUrl: `https://github.com/mbonig/${options.repositoryName || options.name}.git`,
       license: 'MIT',
       npmAccess: NpmAccess.PUBLIC,
+      projenrcTs: true,
       gitignore: ['.idea/', ...(options?.gitIgnore ?? [])],
       keywords: ['awscdk', 'cdk', ...(options.keywords ?? [])],
       depsUpgrade: false,
