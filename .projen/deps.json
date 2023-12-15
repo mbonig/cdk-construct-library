@@ -91,6 +91,14 @@
     },
     {
       "name": "case",
+      "type": "bundled"
+    },
+    {
+      "name": "yaml",
+      "type": "bundled"
+    },
+    {
+      "name": "case",
       "type": "runtime"
     },
     {
