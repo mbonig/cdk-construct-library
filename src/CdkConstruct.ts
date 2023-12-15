@@ -1,4 +1,5 @@
 import { kebab, pascal } from 'case';
+import { Project, SampleFile } from 'projen';
 import { AwsCdkConstructLibrary } from 'projen/lib/awscdk';
 import { NpmAccess } from 'projen/lib/javascript';
 
@@ -76,6 +77,59 @@ export interface CdkConstructOptions {
   readonly disablePublishToGo?: boolean;
 }
 
+class SampleConstructFile extends SampleFile {
+  constructor(scope: Project, constructName: string) {
+    const propsInterfaceName = `${pascal(constructName)}Props`;
+    super(scope, `src/${pascal(constructName)}.ts`, {
+      contents: [
+        "import { Construct } from 'constructs';",
+        '',
+        `export interface ${propsInterfaceName} {}`,
+        '',
+        `export class ${pascal(constructName)} extends Construct {`,
+        `  constructor(scope: Construct, id: string, props: ${propsInterfaceName}) {`,
+        '    super(scope, id);',
+        '  }',
+        '}',
+      ].join('\n'),
+    });
+  }
+}
+
+class ConstructIndexFile extends SampleFile {
+  constructor(scope: Project, constructName: string) {
+    super(scope, 'src/index.ts', {
+      contents: `export * from \'./${pascal(constructName)}\';`,
+    });
+  }
+
+}
+
+class TestFile extends SampleFile {
+  constructor(scope: Project, constructName: string) {
+    super(scope, `test/${pascal(constructName)}.test.ts`, {
+      contents: [
+        "import { App, Stack } from 'aws-cdk-lib';",
+        "import { Template } from 'aws-cdk-lib/assertions';",
+        `import { ${pascal(constructName)} } from '../src';`,
+
+        'test(\'Snapshot\', () => {',
+        '  // GIVEN',
+        '  const stack = new Stack();',
+        '',
+        '  // WHEN',
+        `  new ${pascal(constructName)}(stack, '${pascal(constructName)}', {});`,
+        '',
+        '  // THEN',
+        '  const assert = Template.fromStack(stack);',
+        '  expect(assert.toJSON()).toMatchSnapshot();',
+        '});',
+      ].join('\n'),
+    });
+  }
+
+}
+
 export class CdkConstruct extends AwsCdkConstructLibrary {
 
   constructor(options: CdkConstructOptions) {
@@ -111,7 +165,11 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
         gitUserName: 'Matthew Bonig',
         gitUserEmail: 'matthew.bonig@gmail.com',
       },
-
+      sampleCode: false,
     });
+
+    new SampleConstructFile(this, options.name);
+    new ConstructIndexFile(this, options.name);
+    new TestFile(this, options.name);
   }
 }

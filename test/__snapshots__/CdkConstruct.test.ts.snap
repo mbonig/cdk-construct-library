@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CdkConstruct Creates test file 1`] = `
+"import { App, Stack } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
+import { TestConstruct } from '../src';
+test('Snapshot', () => {
+  // GIVEN
+  const stack = new Stack();
+
+  // WHEN
+  new TestConstruct(stack, 'TestConstruct', {});
+
+  // THEN
+  const assert = Template.fromStack(stack);
+  expect(assert.toJSON()).toMatchSnapshot();
+});"
+`;
+
+exports[`CdkConstruct Creates the index file 1`] = `"export * from './TestConstruct';"`;
+
+exports[`CdkConstruct Creates the starting construct file 1`] = `
+"import { Construct } from 'constructs';
+
+export interface TestConstructProps {}
+
+export class TestConstruct extends Construct {
+  constructor(scope: Construct, id: string, props: TestConstructProps) {
+    super(scope, id);
+  }
+}"
+`;

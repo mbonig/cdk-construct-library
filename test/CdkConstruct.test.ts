@@ -186,4 +186,25 @@ describe('CdkConstruct', () => {
     expect(packageFile.jsii.targets.go).toBeUndefined();
   });
 
+  test('Creates the starting construct file', () => {
+    const snapshot = getSnapshot({});
+    const constructFile = snapshot['src/TestConstruct.ts'];
+
+    expect(constructFile).toMatchSnapshot();
+  });
+
+  test('Creates the index file', () => {
+    const snapshot = getSnapshot({});
+    const indexFile = snapshot['src/index.ts'];
+
+    expect(indexFile).toMatchSnapshot();
+  });
+
+  test('Creates test file', () => {
+    const snapshot = getSnapshot({});
+    const testFile = snapshot['test/TestConstruct.test.ts'];
+
+    expect(testFile).toMatchSnapshot();
+  });
+
 });
