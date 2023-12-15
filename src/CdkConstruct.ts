@@ -177,7 +177,7 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       keywords: ['awscdk', 'cdk', ...(options.keywords ?? [])],
       depsUpgrade: false,
       deps: options?.deps,
-      devDeps: ['@matthewbonig/cdk-construct-library', ...(options?.devDeps || [])],
+      devDeps: options?.devDeps,
       peerDeps: options?.peerDeps,
       bundledDeps: options?.bundledDeps,
       publishToPypi: options.disablePublishToPypi ? undefined : {
