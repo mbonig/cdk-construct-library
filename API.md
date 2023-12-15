@@ -1603,20 +1603,13 @@ public readonly name: string;
 ```
 
 - *Type:* string
-- *Default:* 'my-construct'
+- *Default:* "my-construct"
 
 The name of the construct.
 
 Should be formatted @matthewbonig/<name>.
 
 ---
-
-*Example*
-
-```typescript
-'my-construct'
-```
-
 
 ##### `cdkVersion`<sup>Optional</sup> <a name="cdkVersion" id="@matthewbonig/cdk-construct-library.CdkConstructOptions.property.cdkVersion"></a>
 

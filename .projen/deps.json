@@ -98,6 +98,14 @@
       "type": "bundled"
     },
     {
+      "name": "constructs",
+      "type": "peer"
+    },
+    {
+      "name": "projen",
+      "type": "peer"
+    },
+    {
       "name": "case",
       "type": "runtime"
     },

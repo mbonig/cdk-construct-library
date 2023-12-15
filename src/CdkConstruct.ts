@@ -7,8 +7,7 @@ export interface CdkConstructOptions {
   /**
    * The name of the construct. Should be formatted @matthewbonig/<name>.
    *
-   * @default 'my-construct'
-   * @example 'my-construct'
+   * @default "my-construct"
    */
   readonly name: string;
 
