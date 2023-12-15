@@ -77,6 +77,26 @@ export interface CdkConstructOptions {
   readonly disablePublishToGo?: boolean;
 
   /**
+   * Additional depedencies to add to the project.
+   */
+  readonly deps?: string[];
+
+  /**
+   * Additional dev dependencies to add to the project.
+   */
+  readonly devDeps?: string[];
+
+  /**
+   * Additional peer dependencies to add to the project.
+   */
+  readonly peerDeps?: string[];
+
+  /**
+   * Additional bundled dependencies to add to the project.
+   */
+  readonly bundledDeps?: string[];
+
+  /**
    * Magic to make projen work.
    * @internal
    */
@@ -156,6 +176,10 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       gitignore: ['.idea/', ...(options?.gitIgnore ?? [])],
       keywords: ['awscdk', 'cdk', ...(options.keywords ?? [])],
       depsUpgrade: false,
+      deps: options?.deps,
+      devDeps: options?.devDeps,
+      peerDeps: options?.peerDeps,
+      bundledDeps: options?.bundledDeps,
       publishToPypi: options.disablePublishToPypi ? undefined : {
         distName: `mbonig.${kebab(options.name)}`,
         module: `mbonig.${kebab(options.name)}`,

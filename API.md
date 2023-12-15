@@ -1583,15 +1583,19 @@ const cdkConstructOptions: CdkConstructOptions = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.name">name</a></code> | <code>string</code> | The name of the construct. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | Additional bundled dependencies to add to the project. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | The version of the CDK to use. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | The version of the constructs library to use. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.deps">deps</a></code> | <code>string[]</code> | Additional depedencies to add to the project. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.description">description</a></code> | <code>string</code> | The description of the construct. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.devDeps">devDeps</a></code> | <code>string[]</code> | Additional dev dependencies to add to the project. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.disablePublishToGo">disablePublishToGo</a></code> | <code>boolean</code> | Disable publishing to Go. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.disablePublishToMaven">disablePublishToMaven</a></code> | <code>boolean</code> | Disable publishing to Maven. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.disablePublishToNuGet">disablePublishToNuGet</a></code> | <code>boolean</code> | Disable publishing to NuGet. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.disablePublishToPypi">disablePublishToPypi</a></code> | <code>boolean</code> | Disable publishing to PyPi. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.gitIgnore">gitIgnore</a></code> | <code>string[]</code> | Any additional entries to add to the .gitignore file. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Additional keywords to include in the package.json file. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Additional peer dependencies to add to the project. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.repositoryName">repositoryName</a></code> | <code>string</code> | The name of the repository. |
 
 ---
@@ -1608,6 +1612,18 @@ public readonly name: string;
 The name of the construct.
 
 Should be formatted @matthewbonig/<name>.
+
+---
+
+##### `bundledDeps`<sup>Optional</sup> <a name="bundledDeps" id="@matthewbonig/cdk-construct-library.CdkConstructOptions.property.bundledDeps"></a>
+
+```typescript
+public readonly bundledDeps: string[];
+```
+
+- *Type:* string[]
+
+Additional bundled dependencies to add to the project.
 
 ---
 
@@ -1637,6 +1653,18 @@ The version of the constructs library to use.
 
 ---
 
+##### `deps`<sup>Optional</sup> <a name="deps" id="@matthewbonig/cdk-construct-library.CdkConstructOptions.property.deps"></a>
+
+```typescript
+public readonly deps: string[];
+```
+
+- *Type:* string[]
+
+Additional depedencies to add to the project.
+
+---
+
 ##### `description`<sup>Optional</sup> <a name="description" id="@matthewbonig/cdk-construct-library.CdkConstructOptions.property.description"></a>
 
 ```typescript
@@ -1646,6 +1674,18 @@ public readonly description: string;
 - *Type:* string
 
 The description of the construct.
+
+---
+
+##### `devDeps`<sup>Optional</sup> <a name="devDeps" id="@matthewbonig/cdk-construct-library.CdkConstructOptions.property.devDeps"></a>
+
+```typescript
+public readonly devDeps: string[];
+```
+
+- *Type:* string[]
+
+Additional dev dependencies to add to the project.
 
 ---
 
@@ -1722,6 +1762,18 @@ public readonly keywords: string[];
 - *Type:* string[]
 
 Additional keywords to include in the package.json file.
+
+---
+
+##### `peerDeps`<sup>Optional</sup> <a name="peerDeps" id="@matthewbonig/cdk-construct-library.CdkConstructOptions.property.peerDeps"></a>
+
+```typescript
+public readonly peerDeps: string[];
+```
+
+- *Type:* string[]
+
+Additional peer dependencies to add to the project.
 
 ---
 

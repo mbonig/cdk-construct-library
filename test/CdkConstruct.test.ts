@@ -207,4 +207,40 @@ describe('CdkConstruct', () => {
     expect(testFile).toMatchSnapshot();
   });
 
+  test('can add deps', () => {
+    const snapshot = getSnapshot({
+      deps: ['lodash.merge@^4.6.2'],
+    });
+    const packageFile = snapshot['package.json'];
+
+    expect(packageFile.dependencies['lodash.merge']).toEqual('^4.6.2');
+  });
+
+  test('can add devDeps', () => {
+    const snapshot = getSnapshot({
+      devDeps: ['lodash.merge'],
+    });
+    const packageFile = snapshot['package.json'];
+
+    expect(packageFile.devDependencies['lodash.merge']).toEqual('*');
+  });
+
+  test('can add peerDeps', () => {
+    const snapshot = getSnapshot({
+      peerDeps: ['lodash.merge'],
+    });
+    const packageFile = snapshot['package.json'];
+
+    expect(packageFile.peerDependencies['lodash.merge']).toEqual('*');
+  });
+
+  test('can add bundledDeps', () => {
+    const snapshot = getSnapshot({
+      bundledDeps: ['lodash.merge'],
+    });
+    const packageFile = snapshot['package.json'];
+
+    expect(packageFile.bundledDependencies).toContain('lodash.merge');
+  });
+
 });
