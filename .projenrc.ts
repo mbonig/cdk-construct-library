@@ -11,6 +11,7 @@ const project = new cdk.JsiiProject({
   projenrcTs: true,
   repositoryUrl: 'https://github.com/mbonig/cdk-construct-library.git',
   deps: ['projen', 'yaml', 'case'],
+  depsUpgrade: false,
 });
 
 project.synth();
