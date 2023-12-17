@@ -1,0 +1,460 @@
+{
+  "author": {
+    "email": "matthew.bonig@gmail.com",
+    "name": "Matthew Bonig",
+    "roles": [
+      "author"
+    ]
+  },
+  "bundled": {
+    "case": "^1.6.3",
+    "yaml": "^2.3.4"
+  },
+  "dependencies": {
+    "constructs": "^10.3.0",
+    "projen": "^0.77.6"
+  },
+  "dependencyClosure": {
+    "constructs": {
+      "targets": {
+        "dotnet": {
+          "namespace": "Constructs",
+          "packageId": "Constructs"
+        },
+        "go": {
+          "moduleName": "github.com/aws/constructs-go"
+        },
+        "java": {
+          "maven": {
+            "artifactId": "constructs",
+            "groupId": "software.constructs"
+          },
+          "package": "software.constructs"
+        },
+        "js": {
+          "npm": "constructs"
+        },
+        "python": {
+          "distName": "constructs",
+          "module": "constructs"
+        }
+      }
+    },
+    "projen": {
+      "submodules": {
+        "projen.awscdk": {},
+        "projen.build": {},
+        "projen.cdk": {},
+        "projen.cdk8s": {},
+        "projen.cdktf": {},
+        "projen.circleci": {},
+        "projen.github": {},
+        "projen.github.workflows": {},
+        "projen.gitlab": {},
+        "projen.java": {},
+        "projen.javascript": {},
+        "projen.python": {},
+        "projen.release": {},
+        "projen.typescript": {},
+        "projen.vscode": {},
+        "projen.web": {}
+      },
+      "targets": {
+        "go": {
+          "moduleName": "github.com/projen/projen-go"
+        },
+        "java": {
+          "maven": {
+            "artifactId": "projen",
+            "groupId": "io.github.cdklabs"
+          },
+          "package": "io.github.cdklabs.projen"
+        },
+        "js": {
+          "npm": "projen"
+        },
+        "python": {
+          "distName": "projen",
+          "module": "projen"
+        }
+      }
+    }
+  },
+  "description": "@matthewbonig/cdk-construct-library",
+  "docs": {
+    "stability": "stable"
+  },
+  "homepage": "https://github.com/mbonig/cdk-construct-library.git",
+  "jsiiVersion": "5.0.21 (build 1951a18)",
+  "license": "Apache-2.0",
+  "metadata": {
+    "jsii": {
+      "pacmak": {
+        "hasDefaultInterfaces": true
+      }
+    },
+    "tscRootDir": "src"
+  },
+  "name": "@matthewbonig/cdk-construct-library",
+  "readme": {
+    "markdown": "# My projen project for CDK constructs\n\nI try to build a lot of constructs, so this project makes it incredibly simple to do.\n\n"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbonig/cdk-construct-library.git"
+  },
+  "schema": "jsii/0.10.0",
+  "targets": {
+    "js": {
+      "npm": "@matthewbonig/cdk-construct-library"
+    }
+  },
+  "types": {
+    "test.CdkConstruct": {
+      "assembly": "@matthewbonig/cdk-construct-library",
+      "base": "projen.awscdk.AwsCdkConstructLibrary",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@matthewbonig/cdk-construct-library.CdkConstruct",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/CdkConstruct.ts",
+          "line": 156
+        },
+        "parameters": [
+          {
+            "name": "options",
+            "type": {
+              "fqn": "@matthewbonig/cdk-construct-library.CdkConstructOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/CdkConstruct.ts",
+        "line": 154
+      },
+      "name": "CdkConstruct",
+      "symbolId": "src/CdkConstruct:CdkConstruct"
+    },
+    "@matthewbonig/cdk-construct-library.CdkConstructOptions": {
+      "assembly": "@matthewbonig/cdk-construct-library",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@matthewbonig/cdk-construct-library.CdkConstructOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/CdkConstruct.ts",
+        "line": 6
+      },
+      "name": "CdkConstructOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "default": "\"my-construct\"",
+            "remarks": "Should be formatted @matthewbonig/<name>.",
+            "stability": "stable",
+            "summary": "The name of the construct."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 12
+          },
+          "name": "name",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "Additional bundled dependencies to add to the project."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 97
+          },
+          "name": "bundledDeps",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "'2.85.0'",
+            "stability": "stable",
+            "summary": "The version of the CDK to use."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 19
+          },
+          "name": "cdkVersion",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "'10.1.203'",
+            "stability": "stable",
+            "summary": "The version of the constructs library to use."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 34
+          },
+          "name": "constructsVersion",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "Additional depedencies to add to the project."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 82
+          },
+          "name": "deps",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "The description of the construct."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 39
+          },
+          "name": "description",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "Additional dev dependencies to add to the project."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 87
+          },
+          "name": "devDeps",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "stable",
+            "summary": "Disable publishing to Go."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 77
+          },
+          "name": "disablePublishToGo",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "stable",
+            "summary": "Disable publishing to Maven."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 70
+          },
+          "name": "disablePublishToMaven",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "stable",
+            "summary": "Disable publishing to NuGet."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 63
+          },
+          "name": "disablePublishToNuGet",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "stable",
+            "summary": "Disable publishing to PyPi."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 56
+          },
+          "name": "disablePublishToPypi",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "Any additional entries to add to the .gitignore file."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 44
+          },
+          "name": "gitIgnore",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "Additional keywords to include in the package.json file."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 49
+          },
+          "name": "keywords",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "Additional peer dependencies to add to the project."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 92
+          },
+          "name": "peerDeps",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "\"https://github.com/mbonig/<name>.git\"",
+            "example": "'my-test-construct'",
+            "remarks": "If not specified, the name will be used.",
+            "stability": "stable",
+            "summary": "The name of the repository."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/CdkConstruct.ts",
+            "line": 27
+          },
+          "name": "repositoryName",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/CdkConstruct:CdkConstructOptions"
+    }
+  },
+  "version": "0.0.0",
+  "fingerprint": "ayQIJhjj+p0PAUqo0turUpC1UgmeaOnZXOQdovuC3A0="
+}
