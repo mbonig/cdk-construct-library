@@ -166,7 +166,7 @@ describe('CdkConstruct', () => {
     });
     const packageFile = snapshot['package.json'];
 
-    expect(packageFile.jsii.targets.maven).toBeUndefined();
+    expect(packageFile.jsii.targets.java).toBeUndefined();
   });
 
   test('Published to Go by default', () => {
@@ -241,6 +241,20 @@ describe('CdkConstruct', () => {
     const packageFile = snapshot['package.json'];
 
     expect(packageFile.bundledDependencies).toContain('lodash.merge');
+  });
+
+  test('passes __new__', () => {
+    // this test requires there to be a .jsii file in this /test/ directory and it have an object
+    // in the 'types' property called 'test.CdkConstruct'
+    const snapshot = getSnapshot({
+      // @ts-ignore
+      __new__: {
+        fqn: 'test.CdkConstruct',
+        args: {},
+      },
+    });
+
+    expect(snapshot['.projenrc.ts']).toBeTruthy();
   });
 
 });

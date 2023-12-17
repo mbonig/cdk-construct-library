@@ -155,6 +155,7 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
 
   constructor(options: CdkConstructOptions) {
     super({
+      ...options,
       author: 'Matthew Bonig',
       authorAddress: 'matthew.bonig@gmail.com',
       description: options.description,
@@ -181,7 +182,7 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
         dotNetNamespace: `MBonig.${pascal(options.name)}`,
         packageId: `MBonig.${pascal(options.name)}`,
       },
-      publishToMaven: {
+      publishToMaven: options.disablePublishToMaven ? undefined : {
         mavenGroupId: 'com.matthewbonig',
         javaPackage: `com.matthewbonig.${pascal(options.name)}`,
         mavenArtifactId: kebab(options.name),
@@ -192,8 +193,6 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
         gitUserEmail: 'matthew.bonig@gmail.com',
       },
       sampleCode: false,
-      // @ts-ignore
-      __new__: options.__new__, // MAGIC
     });
 
     new SampleConstructFile(this, options.name);
