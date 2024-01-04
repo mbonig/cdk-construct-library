@@ -1,4 +1,4 @@
-import { kebab, pascal } from 'case';
+import { kebab, pascal, snake } from 'case';
 import { Project, SampleFile } from 'projen';
 import { AwsCdkConstructLibrary } from 'projen/lib/awscdk';
 import { NpmAccess } from 'projen/lib/javascript';
@@ -176,7 +176,7 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       bundledDeps: options?.bundledDeps,
       publishToPypi: options.disablePublishToPypi ? undefined : {
         distName: `mbonig.${kebab(options.name)}`,
-        module: `mbonig.${kebab(options.name)}`,
+        module: `mbonig_${snake(options.name)}`,
       },
       publishToNuget: options.disablePublishToNuGet ? undefined : {
         dotNetNamespace: `MBonig.${pascal(options.name)}`,

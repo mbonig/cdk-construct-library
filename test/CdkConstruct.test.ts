@@ -112,7 +112,7 @@ describe('CdkConstruct', () => {
     const packageFile = snapshot['package.json'];
 
     expect(packageFile.jsii.targets.python.distName).toEqual('mbonig.test-construct');
-    expect(packageFile.jsii.targets.python.module).toEqual('mbonig.test-construct');
+    expect(packageFile.jsii.targets.python.module).toEqual('mbonig_test_construct');
   });
 
   test('Publishing to PyPi kebab-cases the name', () => {
@@ -122,7 +122,7 @@ describe('CdkConstruct', () => {
     const packageFile = snapshot['package.json'];
 
     expect(packageFile.jsii.targets.python.distName).toEqual('mbonig.test-construct');
-    expect(packageFile.jsii.targets.python.module).toEqual('mbonig.test-construct');
+    expect(packageFile.jsii.targets.python.module).toEqual('mbonig_test_construct');
   });
 
   test('Can disable publishing to PyPi', () => {
