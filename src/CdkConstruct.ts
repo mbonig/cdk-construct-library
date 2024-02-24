@@ -172,6 +172,7 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       jestOptions: {
         jestVersion: '28',
       },
+      jsiiVersion: '~5.2.0',
       depsUpgrade: false,
       deps: options?.deps,
       devDeps: options?.devDeps,

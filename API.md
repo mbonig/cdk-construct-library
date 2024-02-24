@@ -1611,7 +1611,7 @@ public readonly name: string;
 
 The name of the construct.
 
-Should be formatted @matthewbonig/<name>.
+Should be formatted
 
 ---
 
