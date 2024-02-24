@@ -169,6 +169,9 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       projenrcTs: true,
       gitignore: ['.idea/', ...(options?.gitIgnore ?? [])],
       keywords: ['awscdk', 'cdk', ...(options.keywords ?? [])],
+      jestOptions: {
+        jestVersion: '28',
+      },
       depsUpgrade: false,
       deps: options?.deps,
       devDeps: options?.devDeps,
