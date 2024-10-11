@@ -31,7 +31,7 @@ new CdkConstruct(options: CdkConstructOptions)
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.addTask">addTask</a></code> | Adds a new task to this project. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
@@ -74,7 +74,7 @@ Returns a string representation of this construct.
 ##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@matthewbonig/cdk-construct-library.CdkConstruct.addExcludeFromCleanup"></a>
 
 ```typescript
-public addExcludeFromCleanup(globs: string): void
+public addExcludeFromCleanup(globs: ...string[]): void
 ```
 
 Exclude the matching files from pre-synth cleanup.
@@ -84,7 +84,7 @@ source files include the projen marker and we don't want them to be erased durin
 
 ###### `globs`<sup>Required</sup> <a name="globs" id="@matthewbonig/cdk-construct-library.CdkConstruct.addExcludeFromCleanup.parameter.globs"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 The glob patterns to match.
 
@@ -112,14 +112,13 @@ The glob pattern to ignore.
 public addPackageIgnore(pattern: string): void
 ```
 
-Exclude these files from the bundled package.
-
-Implemented by project types based on the
-packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
+Adds patterns to be ignored by npm.
 
 ###### `pattern`<sup>Required</sup> <a name="pattern" id="@matthewbonig/cdk-construct-library.CdkConstruct.addPackageIgnore.parameter.pattern"></a>
 
 - *Type:* string
+
+The pattern to ignore.
 
 ---
 
@@ -341,7 +340,7 @@ public addBins(bins: {[ key: string ]: string}): void
 ##### `addBundledDeps` <a name="addBundledDeps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addBundledDeps"></a>
 
 ```typescript
-public addBundledDeps(deps: string): void
+public addBundledDeps(deps: ...string[]): void
 ```
 
 Defines bundled dependencies.
@@ -351,7 +350,7 @@ Bundled dependencies will be added as normal dependencies as well as to the
 
 ###### `deps`<sup>Required</sup> <a name="deps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addBundledDeps.parameter.deps"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 Names modules to install.
 
@@ -366,28 +365,28 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 ##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="@matthewbonig/cdk-construct-library.CdkConstruct.addCompileCommand"></a>
 
 ```typescript
-public addCompileCommand(commands: string): void
+public addCompileCommand(commands: ...string[]): void
 ```
 
 DEPRECATED.
 
 ###### `commands`<sup>Required</sup> <a name="commands" id="@matthewbonig/cdk-construct-library.CdkConstruct.addCompileCommand.parameter.commands"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 ---
 
 ##### `addDeps` <a name="addDeps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addDeps"></a>
 
 ```typescript
-public addDeps(deps: string): void
+public addDeps(deps: ...string[]): void
 ```
 
 Defines normal dependencies.
 
 ###### `deps`<sup>Required</sup> <a name="deps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addDeps.parameter.deps"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 Names modules to install.
 
@@ -402,14 +401,14 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 ##### `addDevDeps` <a name="addDevDeps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addDevDeps"></a>
 
 ```typescript
-public addDevDeps(deps: string): void
+public addDevDeps(deps: ...string[]): void
 ```
 
 Defines development/test dependencies.
 
 ###### `deps`<sup>Required</sup> <a name="deps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addDevDeps.parameter.deps"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 Names modules to install.
 
@@ -440,14 +439,14 @@ The fields to set.
 ##### `addKeywords` <a name="addKeywords" id="@matthewbonig/cdk-construct-library.CdkConstruct.addKeywords"></a>
 
 ```typescript
-public addKeywords(keywords: string): void
+public addKeywords(keywords: ...string[]): void
 ```
 
 Adds keywords to package.json (deduplicated).
 
 ###### `keywords`<sup>Required</sup> <a name="keywords" id="@matthewbonig/cdk-construct-library.CdkConstruct.addKeywords.parameter.keywords"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 The keywords to add.
 
@@ -456,7 +455,7 @@ The keywords to add.
 ##### `addPeerDeps` <a name="addPeerDeps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addPeerDeps"></a>
 
 ```typescript
-public addPeerDeps(deps: string): void
+public addPeerDeps(deps: ...string[]): void
 ```
 
 Defines peer dependencies.
@@ -467,7 +466,7 @@ your code against the minimum version required from your consumers.
 
 ###### `deps`<sup>Required</sup> <a name="deps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addPeerDeps.parameter.deps"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 Names modules to install.
 
@@ -498,14 +497,14 @@ The scripts to set.
 ##### ~~`addTestCommand`~~ <a name="addTestCommand" id="@matthewbonig/cdk-construct-library.CdkConstruct.addTestCommand"></a>
 
 ```typescript
-public addTestCommand(commands: string): void
+public addTestCommand(commands: ...string[]): void
 ```
 
 DEPRECATED.
 
 ###### `commands`<sup>Required</sup> <a name="commands" id="@matthewbonig/cdk-construct-library.CdkConstruct.addTestCommand.parameter.commands"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 ---
 
@@ -584,7 +583,7 @@ The command to execute.
 ##### ~~`addCdkDependencies`~~ <a name="addCdkDependencies" id="@matthewbonig/cdk-construct-library.CdkConstruct.addCdkDependencies"></a>
 
 ```typescript
-public addCdkDependencies(deps: string): void
+public addCdkDependencies(deps: ...string[]): void
 ```
 
 Adds dependencies to AWS CDK modules.
@@ -593,7 +592,7 @@ Since this is a library project, dependencies will be added as peer dependencies
 
 ###### `deps`<sup>Required</sup> <a name="deps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addCdkDependencies.parameter.deps"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 
@@ -602,14 +601,14 @@ names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 ##### ~~`addCdkTestDependencies`~~ <a name="addCdkTestDependencies" id="@matthewbonig/cdk-construct-library.CdkConstruct.addCdkTestDependencies"></a>
 
 ```typescript
-public addCdkTestDependencies(deps: string): void
+public addCdkTestDependencies(deps: ...string[]): void
 ```
 
 Adds AWS CDK modules as dev dependencies.
 
 ###### `deps`<sup>Required</sup> <a name="deps" id="@matthewbonig/cdk-construct-library.CdkConstruct.addCdkTestDependencies.parameter.deps"></a>
 
-- *Type:* string
+- *Type:* ...string[]
 
 names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 
@@ -740,8 +739,8 @@ When given a project, this it the project itself.
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
-| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version supported by this package. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
@@ -1320,7 +1319,9 @@ public readonly maxNodeVersion: string;
 
 - *Type:* string
 
-Maximum node version required by this package.
+Maximum node version supported by this package.
+
+The value indicates the package is incompatible with newer versions.
 
 ---
 
@@ -1332,7 +1333,9 @@ public readonly minNodeVersion: string;
 
 - *Type:* string
 
-Minimum node.js version required by this package.
+The minimum node version required by this package to function.
+
+This value indicates the package is incompatible with older versions.
 
 ---
 
@@ -1548,6 +1551,7 @@ public readonly version: string;
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstruct.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -1563,6 +1567,16 @@ The name of the default task (the task executed when `projen` is run without arg
 
 Normally
 this task should synthesize the project files.
+
+---
+
+##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="@matthewbonig/cdk-construct-library.CdkConstruct.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
+
+```typescript
+public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
+```
+
+- *Type:* string
 
 ---
 
