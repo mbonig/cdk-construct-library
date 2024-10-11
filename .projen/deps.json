@@ -60,16 +60,17 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.2.0",
+      "version": "~5.5.0",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "~5.2.0",
+      "version": "~5.5.0",
       "type": "build"
     },
     {
       "name": "projen",
+      "version": "~0.88.2",
       "type": "build"
     },
     {

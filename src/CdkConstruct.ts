@@ -95,6 +95,12 @@ export interface CdkConstructOptions {
    * Additional bundled dependencies to add to the project.
    */
   readonly bundledDeps?: string[];
+
+  /**
+   * The projen version to use.
+   */
+  readonly projenVersion?: string;
+
 }
 
 class SampleConstructFile extends SampleFile {
@@ -169,10 +175,11 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       projenrcTs: true,
       gitignore: ['.idea/', ...(options?.gitIgnore ?? [])],
       keywords: ['awscdk', 'cdk', ...(options.keywords ?? [])],
+      projenVersion: options.projenVersion || '~0.88.2',
       jestOptions: {
         jestVersion: '28',
       },
-      jsiiVersion: '~5.2.0',
+      jsiiVersion: '~5.5.0',
       depsUpgrade: false,
       deps: options?.deps,
       devDeps: options?.devDeps,

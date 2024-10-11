@@ -1596,6 +1596,7 @@ const cdkConstructOptions: CdkConstructOptions = { ... }
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.gitIgnore">gitIgnore</a></code> | <code>string[]</code> | Any additional entries to add to the .gitignore file. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Additional keywords to include in the package.json file. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Additional peer dependencies to add to the project. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | The projen version to use. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.repositoryName">repositoryName</a></code> | <code>string</code> | The name of the repository. |
 
 ---
@@ -1774,6 +1775,18 @@ public readonly peerDeps: string[];
 - *Type:* string[]
 
 Additional peer dependencies to add to the project.
+
+---
+
+##### `projenVersion`<sup>Optional</sup> <a name="projenVersion" id="@matthewbonig/cdk-construct-library.CdkConstructOptions.property.projenVersion"></a>
+
+```typescript
+public readonly projenVersion: string;
+```
+
+- *Type:* string
+
+The projen version to use.
 
 ---
 
