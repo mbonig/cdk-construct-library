@@ -1,6 +1,11 @@
 {
   "dependencies": [
     {
+      "name": "@stylistic/eslint-plugin",
+      "version": "^2",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -10,12 +15,12 @@
     },
     {
       "name": "@typescript-eslint/eslint-plugin",
-      "version": "^7",
+      "version": "^8",
       "type": "build"
     },
     {
       "name": "@typescript-eslint/parser",
-      "version": "^7",
+      "version": "^8",
       "type": "build"
     },
     {
@@ -38,7 +43,7 @@
     },
     {
       "name": "eslint",
-      "version": "^8",
+      "version": "^9",
       "type": "build"
     },
     {
@@ -47,7 +52,7 @@
     },
     {
       "name": "jest-junit",
-      "version": "^15",
+      "version": "^16",
       "type": "build"
     },
     {
@@ -75,7 +80,7 @@
     },
     {
       "name": "projen",
-      "version": "~0.88.2",
+      "version": "~0.91.14",
       "type": "build"
     },
     {
@@ -104,7 +109,7 @@
     },
     {
       "name": "projen",
-      "version": "~0.88.2",
+      "version": "~0.91.14",
       "type": "peer"
     },
     {
@@ -113,7 +118,7 @@
     },
     {
       "name": "projen",
-      "version": "~0.88.2",
+      "version": "~0.91.14",
       "type": "runtime"
     },
     {

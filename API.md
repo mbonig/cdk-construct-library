@@ -1609,6 +1609,7 @@ const cdkConstructOptions: CdkConstructOptions = { ... }
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.disablePublishToPypi">disablePublishToPypi</a></code> | <code>boolean</code> | Disable publishing to PyPi. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.gitIgnore">gitIgnore</a></code> | <code>string[]</code> | Any additional entries to add to the .gitignore file. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Additional keywords to include in the package.json file. |
+| <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.lambdaRuntime">lambdaRuntime</a></code> | <code>projen.awscdk.LambdaRuntime</code> | The runtime for the auto-generated Lambda function. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Additional peer dependencies to add to the project. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | The projen version to use. |
 | <code><a href="#@matthewbonig/cdk-construct-library.CdkConstructOptions.property.repositoryName">repositoryName</a></code> | <code>string</code> | The name of the repository. |
@@ -1777,6 +1778,19 @@ public readonly keywords: string[];
 - *Type:* string[]
 
 Additional keywords to include in the package.json file.
+
+---
+
+##### `lambdaRuntime`<sup>Optional</sup> <a name="lambdaRuntime" id="@matthewbonig/cdk-construct-library.CdkConstructOptions.property.lambdaRuntime"></a>
+
+```typescript
+public readonly lambdaRuntime: LambdaRuntime;
+```
+
+- *Type:* projen.awscdk.LambdaRuntime
+- *Default:* LambdaRuntime.NODEJS_20_X
+
+The runtime for the auto-generated Lambda function.
 
 ---
 
