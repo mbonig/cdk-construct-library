@@ -1,9 +1,10 @@
 import { kebab, pascal, snake } from 'case';
 import { Project, SampleFile } from 'projen';
-import { AwsCdkConstructLibrary } from 'projen/lib/awscdk';
+import { AwsCdkConstructLibrary, LambdaRuntime } from 'projen/lib/awscdk';
 import { NpmAccess } from 'projen/lib/javascript';
 
 export interface CdkConstructOptions {
+
   /**
    * The name of the construct. Should be formatted @matthewbonig/<name>.
    *
@@ -100,6 +101,13 @@ export interface CdkConstructOptions {
    * The projen version to use.
    */
   readonly projenVersion?: string;
+
+  /**
+   * The runtime for the auto-generated Lambda function.
+   *
+   * @default LambdaRuntime.NODEJS_20_X
+   */
+  readonly lambdaRuntime?: LambdaRuntime;
 
 }
 
@@ -204,6 +212,9 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
         gitUserEmail: 'matthew.bonig@gmail.com',
       },
       sampleCode: false,
+      lambdaOptions: {
+        runtime: options.lambdaRuntime || LambdaRuntime.NODEJS_20_X,
+      },
     });
 
     new SampleConstructFile(this, options.name);
