@@ -7,7 +7,7 @@ const project = new cdk.JsiiProject({
   author: 'Matthew Bonig',
   authorAddress: 'matthew.bonig@gmail.com',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.5.0',
+  jsiiVersion: '^5.9.0',
   projenVersion: projenVersion,
   name: '@matthewbonig/cdk-construct-library',
   npmAccess: NpmAccess.PUBLIC,
