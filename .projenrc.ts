@@ -2,7 +2,7 @@ import { cdk } from 'projen';
 import { NpmAccess } from 'projen/lib/javascript';
 
 
-const projenVersion = '^0.98.2';
+const projenVersion = '^0.98.33';
 const project = new cdk.JsiiProject({
   author: 'Matthew Bonig',
   authorAddress: 'matthew.bonig@gmail.com',
