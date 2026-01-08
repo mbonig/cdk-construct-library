@@ -17,7 +17,10 @@ const project = new cdk.JsiiProject({
   peerDeps: [`projen@${projenVersion}`, 'constructs'],
   bundledDeps: ['yaml', 'case'],
   depsUpgrade: false,
-  gitignore: ['!/test/.jsii'],
+  gitignore: [
+    '!/test/.jsii',
+    '**/.DS_Store',
+  ],
 });
 
 project.synth();
