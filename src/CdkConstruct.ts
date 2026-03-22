@@ -15,7 +15,7 @@ export interface CdkConstructOptions {
   /**
    * The version of the CDK to use.
    *
-   * @default '2.85.0'
+   * @default '2.244.0'
    */
   readonly cdkVersion?: string;
 
@@ -30,7 +30,7 @@ export interface CdkConstructOptions {
   /**
    * The version of the constructs library to use.
    *
-   * @default '10.1.203'
+   * @default '10.5.1'
    */
   readonly constructsVersion?: string;
 
@@ -105,7 +105,7 @@ export interface CdkConstructOptions {
   /**
    * The runtime for the auto-generated Lambda function.
    *
-   * @default LambdaRuntime.NODEJS_20_X
+   * @default LambdaRuntime.NODEJS_22_X
    */
   readonly lambdaRuntime?: LambdaRuntime;
 
@@ -173,8 +173,8 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       author: 'Matthew Bonig',
       authorAddress: 'matthew.bonig@gmail.com',
       description: options.description,
-      cdkVersion: options.cdkVersion || '2.85.0',
-      constructsVersion: options.constructsVersion || '10.1.203',
+      cdkVersion: options.cdkVersion || '2.244.0',
+      constructsVersion: options.constructsVersion || '10.5.1',
       defaultReleaseBranch: 'main',
       name: `@matthewbonig/${options.name}`,
       repositoryUrl: `https://github.com/mbonig/${options.repositoryName || options.name}.git`,
@@ -183,11 +183,8 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       projenrcTs: true,
       gitignore: ['.idea/', ...(options?.gitIgnore ?? [])],
       keywords: ['awscdk', 'cdk', ...(options.keywords ?? [])],
-      projenVersion: options.projenVersion || '~0.88.2',
-      jestOptions: {
-        jestVersion: '28',
-      },
-      jsiiVersion: '~5.5.0',
+      projenVersion: options.projenVersion || '^0.99.21',
+      jsiiVersion: '^5.9.0',
       depsUpgrade: false,
       deps: options?.deps,
       devDeps: options?.devDeps,
@@ -213,7 +210,7 @@ export class CdkConstruct extends AwsCdkConstructLibrary {
       },
       sampleCode: false,
       lambdaOptions: {
-        runtime: options.lambdaRuntime || LambdaRuntime.NODEJS_20_X,
+        runtime: options.lambdaRuntime || LambdaRuntime.NODEJS_22_X,
       },
     });
 

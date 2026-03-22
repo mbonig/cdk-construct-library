@@ -21,9 +21,9 @@ describe('CdkConstruct', () => {
     expect(snapshot['package.json'].author.email).toEqual('matthew.bonig@gmail.com');
   });
 
-  test('CDK version defaults to 2.85.0', () => {
+  test('CDK version defaults to 2.244.0', () => {
     const snapshot = getSnapshot();
-    expect(snapshot['package.json'].peerDependencies['aws-cdk-lib']).toEqual('^2.85.0');
+    expect(snapshot['package.json'].peerDependencies['aws-cdk-lib']).toEqual('^2.244.0');
   });
 
   test('CDK version can be overridden', () => {
@@ -54,7 +54,7 @@ describe('CdkConstruct', () => {
 
   test('constructs version is correct when not overridden', () => {
     const snapshot = getSnapshot({});
-    expect(snapshot['package.json'].devDependencies.constructs).toEqual('10.1.203');
+    expect(snapshot['package.json'].devDependencies.constructs).toEqual('10.5.1');
   });
 
   test('constructs version is correct when overridden', () => {
