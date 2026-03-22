@@ -2,7 +2,7 @@ import { cdk } from 'projen';
 import { NpmAccess } from 'projen/lib/javascript';
 
 
-const projenVersion = '^0.98.33';
+const projenVersion = '^0.99.21';
 const project = new cdk.JsiiProject({
   author: 'Matthew Bonig',
   authorAddress: 'matthew.bonig@gmail.com',
@@ -16,11 +16,14 @@ const project = new cdk.JsiiProject({
   deps: [`projen@${projenVersion}`, 'yaml', 'case'],
   peerDeps: [`projen@${projenVersion}`, 'constructs'],
   bundledDeps: ['yaml', 'case'],
+  docgen: false,
   depsUpgrade: false,
   gitignore: [
     '!/test/.jsii',
     '**/.DS_Store',
   ],
 });
+
+project.addDevDeps('jsii-pacmak@^1.127.0', 'jsii-diff@^1.127.0');
 
 project.synth();
